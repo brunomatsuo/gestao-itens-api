@@ -24,6 +24,7 @@ public class SecurityConfigurations extends WebSecurityConfigurerAdapter {
                 .antMatchers(HttpMethod.POST, "/items/**").hasRole("ADMIN")
                 .antMatchers(HttpMethod.DELETE, "/items/**").hasRole("ADMIN")
                 .antMatchers(HttpMethod.GET, "/items/**").permitAll()
+                .antMatchers("/estoque/**").permitAll()
                 .antMatchers("/actuator/**").permitAll()
                 .anyRequest().authenticated()
                 .and().sessionManagement().disable()

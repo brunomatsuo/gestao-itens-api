@@ -8,9 +8,7 @@ import java.util.List;
 import java.util.Optional;
 
 @Repository
-public interface ItemRepository extends JpaRepository<Item, String> {
+public interface ItemRepository extends JpaRepository<Item, Integer> {
     List<Item> findByNome(String name);
     List<Item> findByMarca(String marca);
-    Optional<Item> findById(Integer id);
-    void deleteById(Integer id);
 }

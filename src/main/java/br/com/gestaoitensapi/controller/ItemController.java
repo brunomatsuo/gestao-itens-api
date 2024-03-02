@@ -102,15 +102,5 @@ public class ItemController {
         }
     }
 
-    @PutMapping("/{id}/removerEstoque/{quantidade}")
-    public ResponseEntity removeEstoque(@PathVariable Integer id, @PathVariable Integer quantidade) {
-        String removeText = itemService.removeQuantidade(id, quantidade);
-        if (removeText.equals("Estoque atualizado")) {
-            return ResponseEntity.ok(removeText);
-        } else if (removeText.equals("Item não encontrado.")) {
-            return ResponseEntity.badRequest().body(removeText);
-        } else {
-            return ResponseEntity.internalServerError().body(removeText);
-        }
-    }
+
 }
